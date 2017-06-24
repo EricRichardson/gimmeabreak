@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     if @user.save
       render json: @user
     else
-      error = {error: 'Could not create user'}
+      error = {error: "Could not create user. Error: #{ @user.errors.full_messages }"}
       render json: error
     end
   end
