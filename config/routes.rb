@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   
   root to: 'static_pages#home'
   resources :users
+  resources :steps_log
+  
+  post 'users/:id/device', to: 'users#register_device'
 end
