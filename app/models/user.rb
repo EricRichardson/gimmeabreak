@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 
 
+
   def self.find_or_create_from_microsoft(microsoft_data)
     find_by_microsoft(microsoft_data) || create_from_microsoft(microsoft_data)
   end
@@ -24,4 +25,6 @@ class User < ApplicationRecord
   def from_microsoft?
     uid.present? && provider == "microsoft"
   end
+  has_many :devices
+  validates :email, uniqueness: true
 end

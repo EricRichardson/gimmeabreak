@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  device_id: MyString
+  steps: 1
+  start_time: 2017-06-24 16:21:52
+  end_time: 2017-06-24 16:21:52
+
+two:
+  device_id: MyString
+  steps: 1
+  start_time: 2017-06-24 16:21:52
+  end_time: 2017-06-24 16:21:52
