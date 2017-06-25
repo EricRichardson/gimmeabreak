@@ -7,9 +7,20 @@ class StaticPagesController < ApplicationController
   def home
   end
 
+  def analytics1
+  end
+
+
+  def analytics2
+  end
+
+  def analytics3
+  end
+
   def login
     redirect_to '/auth/microsoft_v2_auth'
   end
+
   def callback
 # Access the authentication hash for omniauth
 # and extract the auth token, user name, and email
