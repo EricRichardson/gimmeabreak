@@ -4,9 +4,8 @@ Rails.application.routes.draw do
 
   root to: 'static_pages#home'
   resources :users
-HEAD
 
-    match '/auth/:provider/callback', to: 'static_pages#callback', via: [:get, :post]
+  match '/auth/:provider/callback', to: 'static_pages#callback', via: [:get, :post]
 
   get '/login', to: 'static_pages#login'
 
