@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     if @user.save
       render json: @user
     else
-      error = {error: 'Could not create user'}
+      error = {error: "Could not create user. Error: #{ @user.errors.full_messages }"}
       render json: error
     end
   end
@@ -15,6 +15,17 @@ class UsersController < ApplicationController
     render json: @user
   end
 
+  def register_device
+    @user_device = UserDevice.new()
+    @user_device.user_id = params[:id]
+    @user_device.device_id = params[:device_id]
+    if @user_device.save
+      render json: @user_device
+    else
+      error = { error: "Could not register user device #{ @user_device.errors.full_messaged }" }
+      render json: error
+    end
+  end
 
   private
 
