@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     if @user_device.save
       render json: @user_device
     else
-      error = { error: "Could not register user device #{ @user_device.errors.full_messaged }" }
+      error = { error: "Could not register user device #{ @user_device.errors.full_messages }" }
       render json: error
     end
   end
