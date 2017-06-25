@@ -1,0 +1,53 @@
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+  google.charts.load("current", {packages:["timeline"]});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+
+    var container = document.getElementById('example5.1');
+    var chart = new google.visualization.Timeline(container);
+    var dataTable = new google.visualization.DataTable();
+    dataTable.addColumn({ type: 'string', id: 'Room' });
+    dataTable.addColumn({ type: 'string', id: 'Name' });
+    dataTable.addColumn({ type: 'date', id: 'Start' });
+    dataTable.addColumn({ type: 'date', id: 'End' });
+    dataTable.addRows([
+      [ 'Session 1', 'Session',       new Date(0,0,0,12,0,0),  new Date(0,0,0,13,30,0) ],
+      [ 'Break 1', 'Break',    new Date(0,0,0,14,0,0),  new Date(0,0,0,15,30,0) ],
+      [ 'Session 2', 'Session',       new Date(0,0,0,12,0,0),  new Date(0,0,0,13,30,0) ],
+      [ 'Break 2', 'Break',    new Date(0,0,0,14,0,0),  new Date(0,0,0,15,30,0) ],
+      [ 'Session 3', 'Session',       new Date(0,0,0,12,0,0),  new Date(0,0,0,13,30,0) ],
+      [ 'Break 3', 'Break',    new Date(0,0,0,14,0,0),  new Date(0,0,0,15,30,0) ],
+      [ 'Session 4', 'Session',       new Date(0,0,0,12,0,0),  new Date(0,0,0,13,30,0) ],
+      [ 'Break 4', 'Break',    new Date(0,0,0,14,0,0),  new Date(0,0,0,15,30,0) ],
+      [ 'Session 5', 'Session',       new Date(0,0,0,12,0,0),  new Date(0,0,0,13,30,0) ],
+      [ 'Break 5', 'Break',    new Date(0,0,0,14,0,0),  new Date(0,0,0,15,30,0) ],
+      [ 'Session 6', 'Session',       new Date(0,0,0,12,0,0),  new Date(0,0,0,13,30,0) ],
+      [ 'Break 6', 'Break',    new Date(0,0,0,14,0,0),  new Date(0,0,0,15,30,0) ],
+      [ 'Session 7', 'Session',       new Date(0,0,0,12,0,0),  new Date(0,0,0,13,30,0) ],
+      ]);
+
+    var options = {
+      timeline: { colorByRowLabel: true },
+      title: 'Time in Minutes Between Suggested Break and Actual Break Taken',
+      curveType: 'function',
+      legend: { position: 'bottom' },
+      'width':1000,
+      'height':500,
+      'backgroundColor':'aliceblue',
+         animation:{
+           startup:true,
+           duration:2000
+         },
+         titleTextStyle:{
+           fontSize:20
+         }
+    };
+
+    chart.draw(dataTable, options);
+  }
+
+</script>
+
+<div id="example5.1" style="height: 100px;"></div>

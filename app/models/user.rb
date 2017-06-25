@@ -1,5 +1,6 @@
 class User < ApplicationRecord
 
+  has_many :notifications
 
 
   def self.find_or_create_from_microsoft(microsoft_data)
