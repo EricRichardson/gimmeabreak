@@ -1,0 +1,145 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  background-image: url("/oceanbreak.jpg");
+  background-attachment: fixed;
+  background-size: 100%;
+  // background-position-y: -45px;
+  // padding-top: 50px;
+}
+
+#title {
+  color: #ffcc00;
+  font-family: "Arial Black";
+  font-weight: blue;
+  font-size: 100px;
+}
+
+#tagline {
+  color: #ffcc00;
+  font-size: 35px;
+}
+
+#title-tagline {
+  padding-top: 100px;
+}
+
+$bgDefault      : #597db6;
+$bgHighlight    : #8fc9e8;
+$colDefault     : #ecf0f1;
+$colHighlight   : #dbeeff;
+$dropDown       : false;
+.navbar-default {
+  background-color: $bgDefault;
+  border-color: $bgHighlight;
+  .navbar-brand {
+    color: $colDefault;
+    &:hover, &:focus {
+      color: $colHighlight; }}
+  .navbar-text {
+    color: $colDefault; }
+  .navbar-nav {
+    > li {
+      > a {
+        color: $colDefault;
+        &:hover,  &:focus {
+          color: $colHighlight; }}
+      @if $dropDown {
+        > .dropdown-menu {
+          background-color: $bgDefault;
+          > li {
+            > a {
+              color: $colDefault;
+              &:hover,  &:focus {
+                color: $colHighlight;
+                background-color: $bgHighlight; }}
+            &.divider {
+              background-color: $bgHighlight;}}}}}
+    @if $dropDown {
+      .open .dropdown-menu > .active {
+        > a, > a:hover, > a:focus {
+          color: $colHighlight;
+          background-color: $bgHighlight; }}}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}
+    > .open {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+  .navbar-toggle {
+    border-color: $bgHighlight;
+    &:hover, &:focus {
+      background-color: $bgHighlight; }
+    .icon-bar {
+      background-color: $colDefault; }}
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $colDefault; }
+  .navbar-link {
+    color: $colDefault;
+    &:hover {
+      color: $colHighlight; }}}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu {
+    > li > a {
+      color: $colDefault;
+      &:hover, &:focus {
+        color: $colHighlight; }}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+}
+
+.button {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 15px 40px;
+    border: 1px solid #3862a3;
+    border-radius: 10px;
+    background: #5ba0ff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#5ba0ff), to(#3862a3));
+    background: -moz-linear-gradient(top, #5ba0ff, #3862a3);
+    background: linear-gradient(to bottom, #5ba0ff, #3862a3);
+    text-shadow: #233e66 1px 1px 1px;
+    font: normal normal bold 25px arial;
+    color: #ecf0f1;
+    text-decoration: none;
+    position: relative;
+    top: 50px;
+}
+.button:hover,
+.button:focus {
+    border: 1px solid #467bcc;
+    background: #6dc0ff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#6dc0ff), to(#4376c4));
+    background: -moz-linear-gradient(top, #6dc0ff, #4376c4);
+    background: linear-gradient(to bottom, #6dc0ff, #4376c4);
+    color: #ffffff;
+    text-decoration: none;
+}
+.button:active {
+    background: #3862a3;
+    background: -webkit-gradient(linear, left top, left bottom, from(#3862a3), to(#3862a3));
+    background: -moz-linear-gradient(top, #3862a3, #3862a3);
+    background: linear-gradient(to bottom, #3862a3, #3862a3);
+}
